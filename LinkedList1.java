@@ -83,9 +83,9 @@ class LinkedList1 {
 
     public static void main(String...args) {
         LinkedList1 ll = new LinkedList1();
-        ll.displayLL();
+        /*ll.displayLL();
         ll.insertAtBeginning("wELCOME");
-        ll.displayLL();
+        ll.displayLL();*/
         ll.createLL("to","my","home","their","is","no","turning","back","to","your","mom","is","very","hot");
         ll.displayLL();
         ll.insertAtEnding("to");
