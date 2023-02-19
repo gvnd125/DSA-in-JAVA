@@ -81,26 +81,52 @@ class LinkedList1 {
         }
     }
 
+    public void reverseLL() {           //work in progress
+        int n = 0;
+        if(head == null) {
+            n = 0;
+        }
+        else{
+            Node temp = head;
+            while (temp.next != null) {
+                ++n;
+                temp = temp.next;
+            }
+            n++;
+        }
+
+        if(n == 0) {
+            System.out.println("Empty List cannot be reversed");
+        }
+        else {
+            final String arr[] = new String [n];
+            Node temp = head;
+            for(int i=0 ; i<n ; i++){
+                arr[i] = temp.data;
+                temp = temp.next;
+            }
+            temp = head;
+            for(int i=(n-1) ; i>=0 ; --i){
+                temp.data = arr[i];
+                temp = temp.next;
+            }
+        }
+    }
+
     public static void main(String...args) {
         LinkedList1 ll = new LinkedList1();
         /*ll.displayLL();
         ll.insertAtBeginning("wELCOME");
         ll.displayLL();*/
-        ll.createLL("to","my","home","their","is","no","turning","back","to","your","mom","is","very","hot");
+        ll.createLL("my","home","their","is","no","turning");
         ll.displayLL();
         ll.insertAtEnding("to");
         ll.displayLL();
         ll.insertAtBeginning("Hello ji");
         ll.displayLL();
-        ll.insertAtEnding("my home");
-        ll.displayLL();
-        ll.insertAtBeginning("is");
-        ll.displayLL();
-        ll.insertAtEnding("my");
-        ll.displayLL();
-        ll.insertAtEnding("name");
-        ll.displayLL();
         ll.insertAtBeginning("govind");
+        ll.displayLL();
+        ll.reverseLL();
         ll.displayLL();
     }
 }
